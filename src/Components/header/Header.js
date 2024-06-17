@@ -1,9 +1,9 @@
-// src/components/Header.js
+// src/components/header/Header.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
-import { ReactComponent as Logo } from './logo.svg'; 
-import { ReactComponent as HomeIcon } from './home-icon.svg'; 
+import { ReactComponent as Logo } from './logo.svg'; // Ensure the path is correct
+import { ReactComponent as HomeIcon } from './home-icon.svg'; // Ensure the path is correct
 
 const Header = ({ title }) => {
   const navigate = useNavigate();
@@ -11,6 +11,8 @@ const Header = ({ title }) => {
   const handleHomeClick = () => {
     navigate('/');
   };
+
+  console.log("Rendering Header component");
 
   return (
     <header className="header">
