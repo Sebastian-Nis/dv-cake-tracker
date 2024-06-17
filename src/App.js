@@ -4,17 +4,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import NewMember from './components/newmember/NewMember';
 import MemberList from './components/memberlist/MemberList';
-import { db } from './firebase/config';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { database } from './firebase/config'; // Import the correct service
+import { ref, get, set, child } from 'firebase/database';
 
 const App = () => {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const querySnapshot = await getDocs(collection(db, 'members'));
-      const membersData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setMembers(membersData);
+      const dbRef = ref(database);
+      const snapshot = await get(child(dbRef, 'members'));
+      if (snapshot.exists()) {
+        const membersData = snapshot.val();
+        const membersArray = Object.keys(membersData).map(key => ({ id: key, ...membersData[key] }));
+        setMembers(membersArray);
+      }
     };
 
     fetchData();
@@ -46,8 +50,12 @@ const App = () => {
       return;
     }
 
-    const docRef = await addDoc(collection(db, 'members'), member);
-    setMembers([...members, { id: docRef.id, ...member }]);
+    const newMemberKey = ref(database).push().key;
+    const updates = {};
+    updates['/members/' + newMemberKey] = member;
+
+    await set(ref(database), updates);
+    setMembers([...members, { id: newMemberKey, ...member }]);
   };
 
   return (
