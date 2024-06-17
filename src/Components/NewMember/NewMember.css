@@ -16,5 +16,10 @@ form {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 45px;
+    background-color: #cc254c;
+    color: white;
+    border: none;
+    display: inline-block;
   }
   
