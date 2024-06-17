@@ -2,8 +2,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
-import { ReactComponent as Logo } from './logo.svg'; // Assuming you have an SVG logo file
-import { ReactComponent as HomeIcon } from './home-icon.svg'; // Assuming you have an SVG home icon file
+import { ReactComponent as Logo } from './logo.svg'; 
+import { ReactComponent as HomeIcon } from './home-icon.svg'; 
 
 const Header = ({ title }) => {
   const navigate = useNavigate();
