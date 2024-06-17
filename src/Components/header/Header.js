@@ -20,8 +20,10 @@ const Header = ({ title }) => {
       </div>
       <div className="header-right">
         <div className="home-icon-container" onClick={handleHomeClick}>
-          <span>Home</span>
-          <HomeIcon className="home-icon" />
+          <div className="home-content">
+            <span>Home</span>
+            <HomeIcon className="home-icon" />
+          </div>
         </div>
       </div>
     </header>
