@@ -15,9 +15,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rimraf build",
+    "build": "npm run clean && react-scripts build",
+    "deploy": "npm run build && firebase deploy"
   },
   "eslintConfig": {
     "extends": [
@@ -36,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7"
   }
 }

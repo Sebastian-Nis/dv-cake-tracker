@@ -1,10 +1,4 @@
 {
-  "database": {
-    "rules": {
-      ".read": "true",
-      ".write": "true"
-    }
-  },
   "hosting": {
     "public": "build",
     "ignore": [
@@ -18,6 +12,9 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "database": {
+    "rules": "database.rules.json"
   },
   "emulators": {
     "singleProjectMode": true
