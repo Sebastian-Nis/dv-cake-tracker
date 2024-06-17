@@ -6,7 +6,7 @@ import './Home.css';
 const Home = () => {
   return (
     <div className="home-container">
-      <h1>Welcome to Datavid Cake Tracker</h1>
+      <h1>Welcome, what would you like to do?</h1>
       <div className="button-container">
         <Link to="/new-member">
           <button>Add New Member</button>

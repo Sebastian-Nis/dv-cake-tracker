@@ -12,18 +12,17 @@ const Header = ({ title }) => {
     navigate('/');
   };
 
-  console.log("Rendering Header component");
-
   return (
     <header className="header">
       <div className="header-left">
         <Logo className="logo" />
-      </div>
-      <div className="header-center">
-        <h1>{title}</h1>
+        <h1>{title}</h1> {/* Title next to the logo */}
       </div>
       <div className="header-right">
-        <HomeIcon className="home-icon" onClick={handleHomeClick} />
+        <div className="home-icon-container" onClick={handleHomeClick}>
+          <span>Home</span>
+          <HomeIcon className="home-icon" />
+        </div>
       </div>
     </header>
   );

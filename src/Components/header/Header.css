@@ -1,4 +1,3 @@
-/* src/components/header/Header.css */
 .header {
   position: fixed;
   top: 0;
@@ -7,20 +6,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem; /* Add horizontal padding for space on the sides */
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 
-.header-left, .header-center, .header-right {
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  display: flex;
+  flex: 1; /* Use flex to center the content */
+  justify-content: center;
+}
+
+.header-right {
   display: flex;
   align-items: center;
 }
 
 .logo {
   height: 40px;
-  width: 40px;
+  width: 160px;
+  margin-right: 0.5rem; /* Add some space between the logo and the title */
 }
 
 .header-center h1 {
@@ -28,8 +39,22 @@
   font-size: 1.5rem;
 }
 
+.home-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4AC3D8;
+  /* background-color: #CC254C; */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
 .home-icon {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
+  padding: 8px;
   cursor: pointer;
+  border-radius: 45px;
+  fill: #fff;
+  background-color: #4AC3D8;
 }
