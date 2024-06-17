@@ -1,6 +1,6 @@
 // src/components/NewMember/NewMember.js
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './NewMember.css';
 
 const NewMember = ({ addMember }) => {
@@ -9,13 +9,13 @@ const NewMember = ({ addMember }) => {
   const [birthDate, setBirthDate] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newMember = { firstName, lastName, birthDate, country, city };
     addMember(newMember);
-    history.push('/member-list');
+    navigate('/member-list');
   };
 
   return (
