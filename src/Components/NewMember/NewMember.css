@@ -21,5 +21,6 @@ form {
     color: white;
     border: none;
     display: inline-block;
+    white-space: nowrap;
   }
   
