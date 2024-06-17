@@ -1,6 +1,6 @@
 // src/components/memberlist/MemberList.js
 import React from 'react';
-import MemberCard from '../MemberCard/MemberCard';
+import MemberCard from '../membercard/MemberCard';
 import './MemberList.css';
 
 const MemberList = ({ members }) => {

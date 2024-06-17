@@ -5,26 +5,27 @@ import Home from './components/home/Home';
 import NewMember from './components/newmember/NewMember';
 import MemberList from './components/memberlist/MemberList';
 import { database } from './firebase/config';
-import { ref, get, set, child, push } from 'firebase/database';
+import { ref, set, push, onValue } from 'firebase/database';
 
 const App = () => {
   const [members, setMembers] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const dbRef = ref(database);
-      const snapshot = await get(child(dbRef, 'members'));
-      if (snapshot.exists()) {
-        const membersData = snapshot.val();
-        const membersArray = Object.keys(membersData).map(key => ({ id: key, ...membersData[key] }));
+    const dbRef = ref(database, 'members');
+    onValue(dbRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        console.log('Fetched members:', data); // Debugging log
+        const membersArray = Object.keys(data).map(key => ({ id: key, ...data[key] }));
         setMembers(membersArray);
+      } else {
+        console.log('No data available');
       }
-    };
-
-    fetchData();
+    });
   }, []);
 
   const addMember = async (member) => {
+    console.log('Adding member:', member); // Debugging log
     const memberExists = members.some(existingMember =>
       existingMember.firstName === member.firstName &&
       existingMember.lastName === member.lastName &&
@@ -39,7 +40,7 @@ const App = () => {
 
     const birthDate = new Date(member.birthDate);
     const today = new Date();
-    const age = today.getFullYear() - birthDate.getFullYear();
+    let age = today.getFullYear() - birthDate.getFullYear(); // Use let here
     const m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
       age--;
@@ -50,12 +51,15 @@ const App = () => {
       return;
     }
 
-    const newMemberKey = push(child(ref(database), 'members')).key;
-    const updates = {};
-    updates['/members/' + newMemberKey] = member;
-
-    await set(ref(database), updates);
-    setMembers([...members, { id: newMemberKey, ...member }]);
+    try {
+      const newMemberRef = push(ref(database, 'members'));
+      const newMemberKey = newMemberRef.key;
+      await set(newMemberRef, member);
+      console.log('Member added successfully:', member); // Debugging log
+      setMembers([...members, { id: newMemberKey, ...member }]);
+    } catch (error) {
+      console.error('Error adding member:', error); // Debugging log
+    }
   };
 
   return (

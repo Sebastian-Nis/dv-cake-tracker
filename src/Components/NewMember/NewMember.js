@@ -14,6 +14,7 @@ const NewMember = ({ addMember }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newMember = { firstName, lastName, birthDate, country, city };
+    console.log('Form submitted with:', newMember); // Debugging log
     addMember(newMember);
     navigate('/member-list');
   };
