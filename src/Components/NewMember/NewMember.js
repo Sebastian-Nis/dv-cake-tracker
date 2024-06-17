@@ -1,7 +1,7 @@
 // src/components/newmember/NewMember.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PlaceAutocomplete from '../autocomplete/PlaceAutocomplete';
+import PlaceAutocomplete from './PlaceAutocomplete'; // Correct relative path
 import './NewMember.css';
 
 const NewMember = ({ addMember }) => {
@@ -41,12 +41,12 @@ const NewMember = ({ addMember }) => {
         placeholder="Last Name"
         required
       />
-      <DatePicker
+      <input
+        type="date"
         value={birthDate}
-        onChange={setBirthDate}
+        onChange={(e) => setBirthDate(e.target.value)}
         placeholder="Birth Date"
         required
-        style={{ width: '100%' }} // Make the date picker full width
       />
       <PlaceAutocomplete onPlaceSelect={handlePlaceSelect} />
       <input
