@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import NewMember from './components/newmember/NewMember';
 import MemberList from './components/memberlist/MemberList';
-import { database } from './firebase/config'; // Import the correct service
-import { ref, get, set, child } from 'firebase/database';
+import { database } from './firebase/config';
+import { ref, get, set, child, push } from 'firebase/database';
 
 const App = () => {
   const [members, setMembers] = useState([]);
@@ -50,7 +50,7 @@ const App = () => {
       return;
     }
 
-    const newMemberKey = ref(database).push().key;
+    const newMemberKey = push(child(ref(database), 'members')).key;
     const updates = {};
     updates['/members/' + newMemberKey] = member;
 
