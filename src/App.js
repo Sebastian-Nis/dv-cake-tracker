@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import NewMember from './components/newmember/NewMember';
 import MemberList from './components/memberlist/MemberList';
+import Header from './components/header/Header';
 import { database } from './firebase/config';
 import { ref, set, push, onValue } from 'firebase/database';
 
