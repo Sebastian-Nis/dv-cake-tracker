@@ -22,12 +22,13 @@ const PlaceAutocomplete = ({ onPlaceSelect }) => {
   };
 
   return (
-    <GeoapifyContext apiKey="EUJxsgwDRHR8CSnpIYgk">
+    <GeoapifyContext apiKey="1ae1a98b53144409a21d99a4d6d15b7d">
       <GeoapifyGeocoderAutocomplete
         placeholder="Enter address here"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeSelect={handlePlaceSelect}
+        debounceDelay={300}  // Set debounce delay to 300ms
       />
     </GeoapifyContext>
   );
