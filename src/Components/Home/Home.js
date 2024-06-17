@@ -9,10 +9,10 @@ const Home = () => {
       <h1>Welcome, what would you like to do?</h1>
       <div className="button-container">
         <Link to="/new-member">
-          <button>Add New Member</button>
+          <button className='herobtn'>Add New Member</button>
         </Link>
         <Link to="/member-list">
-          <button>View Member List</button>
+          <button className='herobtn'>View Member List</button>
         </Link>
       </div>
     </div>

@@ -21,7 +21,7 @@ const Header = ({ title }) => {
       <div className="header-right">
         <div className="home-icon-container" onClick={handleHomeClick}>
           <div className="home-content">
-            <span>Home</span>
+            <h2>Home</h2> {/* Home text next to the icon */}
             <HomeIcon className="home-icon" />
           </div>
         </div>

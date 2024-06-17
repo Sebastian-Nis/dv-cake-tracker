@@ -6,6 +6,7 @@ import NewMember from './components/newmember/NewMember';
 import MemberList from './components/memberlist/MemberList';
 import Header from './components/header/Header';
 import { database } from './firebase/config';
+import './App.css';
 import { ref, set, push, onValue } from 'firebase/database';
 
 const App = () => {
@@ -66,7 +67,7 @@ const App = () => {
   return (
     <Router>
       <Header title="Cake Tracker" />
-      <div style={{ paddingTop: '80px' }}> {/* Adjust padding to prevent content from being hidden behind the header */}
+      <div class="hero"> {/* Adjust padding to prevent content from being hidden behind the header */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new-member" element={<NewMember addMember={addMember} />} />

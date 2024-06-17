@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Add horizontal padding for space on the sides */
+  padding: 4rem 5rem; /* Add horizontal padding for space on the sides */
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -31,7 +31,7 @@
 .logo {
   height: 40px;
   width: 160px;
-  margin-right: 0.5rem; /* Add some space between the logo and the title */
+  margin-right: 1rem; /* Add some space between the logo and the title */
 }
 
 .header-center h1 {

@@ -65,7 +65,9 @@ const NewMember = ({ addMember }) => {
         required
         readOnly
       />
+      <div className='button-container'>
       <button type="submit">Add Member 🎂</button>
+      </div>
     </form>
   );
 };

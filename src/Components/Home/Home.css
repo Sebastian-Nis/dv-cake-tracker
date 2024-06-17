@@ -1,4 +1,5 @@
 /* src/components/Home/Home.css */
+
 .home-container {
     text-align: center;
     margin-top: 50px;
@@ -22,3 +23,6 @@
     opacity: 0.7;
   }
   
+  .herobtn{
+    font-size: 1.5rem;
+  }
