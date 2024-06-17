@@ -1,15 +1,19 @@
+// src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { initializeApp } from 'firebase/app';
-import firebaseConfig from './firebaseConfig';
+import { db } from './firebase/config';  // Ensure this import path is correct
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Initialize Firebase
+initializeApp(db);
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-

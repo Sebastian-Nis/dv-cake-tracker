@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
 import NewMember from './components/NewMember/NewMember';
 import MemberList from './components/MemberList/MemberList';
-import { db } from './firebaseConfig';
+import { db } from './firebase/config';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 
 const App = () => {
