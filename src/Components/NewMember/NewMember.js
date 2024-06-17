@@ -1,4 +1,4 @@
-// src/components/NewMember/NewMember.js
+// src/components/newmember/NewMember.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NewMember.css';

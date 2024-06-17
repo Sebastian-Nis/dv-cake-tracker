@@ -1,4 +1,4 @@
-// src/components/MemberCard/MemberCard.js
+// src/components/membercard/MemberCard.js
 import React from 'react';
 import './MemberCard.css';
 
