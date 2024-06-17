@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { initializeApp } from 'firebase/app';
-import { db } from './firebase/config';  // Ensure this import path is correct
+import { db } from './firebase/config';
 
 // Initialize Firebase
 initializeApp(db);
