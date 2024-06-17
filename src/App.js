@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
 import NewMember from './components/NewMember/NewMember';
 import MemberList from './components/MemberList/MemberList';
@@ -53,17 +53,11 @@ const App = () => {
   return (
     <Router>
       <div>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/new-member">
-            <NewMember addMember={addMember} />
-          </Route>
-          <Route path="/member-list">
-            <MemberList members={members} />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/new-member" element={<NewMember addMember={addMember} />} />
+          <Route path="/member-list" element={<MemberList members={members} />} />
+        </Routes>
       </div>
     </Router>
   );
