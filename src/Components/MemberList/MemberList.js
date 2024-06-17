@@ -18,7 +18,7 @@ const MemberList = ({ members }) => {
   });
 
   return (
-    <div>
+    <div className="member-list">
       {sortedMembers.map(member => (
         <MemberCard key={member.id} member={member} />
       ))}
