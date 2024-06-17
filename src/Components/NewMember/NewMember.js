@@ -1,7 +1,7 @@
 // src/components/newmember/NewMember.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PlaceAutocomplete from './PlaceAutocomplete'; // Correct relative path
+import PlaceAutocomplete from './PlaceAutocomplete';
 import './NewMember.css';
 
 const NewMember = ({ addMember }) => {
