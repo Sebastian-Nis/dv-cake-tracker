@@ -65,7 +65,7 @@ const App = () => {
 
   return (
     <Router>
-      <Header title="DATAVID Cake Tracker" />
+      <Header title="Cake Tracker" />
       <div style={{ paddingTop: '80px' }}> {/* Adjust padding to prevent content from being hidden behind the header */}
         <Routes>
           <Route path="/" element={<Home />} />
