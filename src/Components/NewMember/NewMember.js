@@ -1,4 +1,3 @@
-// src/components/newmember/NewMember.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PlaceAutocomplete from './PlaceAutocomplete';
@@ -22,7 +21,7 @@ const NewMember = ({ addMember }) => {
     const newMember = { firstName, lastName, birthDate, country, city };
     console.log('Form submitted with:', newMember); // Debugging log
     addMember(newMember);
-    navigate('/member-list');
+    // navigate('/member-list'); // Remove this line to prevent automatic navigation
   };
 
   return (
@@ -66,7 +65,7 @@ const NewMember = ({ addMember }) => {
         readOnly
       />
       <div className='button-container'>
-      <button type="submit">Add Member 🎂</button>
+        <button type="submit">Add Member</button>
       </div>
     </form>
   );

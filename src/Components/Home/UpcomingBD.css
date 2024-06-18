@@ -37,7 +37,7 @@ table{
   }
   
   .upcoming-bd-table th.birthday, .upcoming-bd-table td.birthday {
-    text-align: center; /* Center-align for Birthday column */
+    text-align: right; /* Center-align for Birthday column */
   }
   
   .upcoming-bd-table td {
