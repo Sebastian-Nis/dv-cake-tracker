@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import MemberCard from '../membercard/MemberCard';
 import './MemberList.css';
 
+const calculateAge = (birthDate) => {
+  const today = new Date();
+  const birth = new Date(birthDate);
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDifference = today.getMonth() - birth.getMonth();
+  if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birth.getDate())) {
+    age--;
+  }
+  return age;
+};
+
 const MemberList = ({ members }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOption, setSortOption] = useState('');
@@ -76,7 +87,11 @@ const MemberList = ({ members }) => {
       </div>
       <div className="member-list">
         {sortedMembers.map(member => (
-          <MemberCard key={member.id} member={member} />
+          <MemberCard
+            key={member.id}
+            member={member}
+            age={calculateAge(member.birthDate)}
+          />
         ))}
       </div>
     </div>
