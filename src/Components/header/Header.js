@@ -1,4 +1,3 @@
-// src/components/header/Header.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
@@ -21,8 +20,8 @@ const Header = ({ title }) => {
       <div className="header-right">
         <div className="home-icon-container" onClick={handleHomeClick}>
           <div className="home-content">
-            <h2 id='homeh2'>Home</h2> {/* Home text next to the icon */}
-            <HomeIcon className="home-icon" />
+            <h2 id="homeh2">Home</h2> {/* Home text next to the icon */}
+            <HomeIcon id="home-icon" /> {/* Use ID here */}
           </div>
         </div>
       </div>

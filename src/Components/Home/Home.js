@@ -1,9 +1,9 @@
-// src/components/Home/Home.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UpcomingBD from './UpcomingBD'; 
 import './Home.css';
 
-const Home = () => {
+const Home = ({ members }) => {
   return (
     <div className="home-container">
       <h1>Welcome, what would you like to do?</h1>
@@ -12,9 +12,10 @@ const Home = () => {
           <button className='herobtn'>Add New Member</button>
         </Link>
         <Link to="/member-list">
-          <button className='herobtn'>View Member List</button>
+          <button className='herobtn'>Members List</button>
         </Link>
       </div>
+      <UpcomingBD members={members} />
     </div>
   );
 };

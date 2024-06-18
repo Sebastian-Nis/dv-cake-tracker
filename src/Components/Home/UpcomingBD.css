@@ -1,0 +1,59 @@
+table{
+    color: #0A367F
+}
+.upcoming-bd-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 20px; /* Add some space above the section */
+  }
+  
+  .upcoming-bd-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .upcoming-bd-table th, .upcoming-bd-table td {
+    padding: 8px;
+  }
+  
+  .upcoming-bd-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .upcoming-bd-table th.days-until, .upcoming-bd-table td.days-until {
+    text-align: left; /* Left-align for Days Until column */
+  }
+  
+  .upcoming-bd-table th.name, .upcoming-bd-table td.name {
+    text-align: left; /* Left-align for Name column */
+  }
+  
+  .upcoming-bd-table th.age, .upcoming-bd-table td.age {
+    text-align: center; /* Center-align for Age column */
+  }
+  
+  .upcoming-bd-table th.birthday, .upcoming-bd-table td.birthday {
+    text-align: center; /* Center-align for Birthday column */
+  }
+  
+  .upcoming-bd-table td {
+    border: none; /* Remove table borders */
+  }
+  
+  .view-all-link {
+    display: block;
+    text-align: center; /* Center-align the link */
+    text-decoration: none;
+    color: #cc254c;
+    font-weight: bold;
+    padding: 8px; /* Match the padding of other cells */
+  }
+  
+  .view-all-cell {
+    position: relative;
+  }
+  

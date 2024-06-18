@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
@@ -67,9 +66,9 @@ const App = () => {
   return (
     <Router>
       <Header title="Cake Tracker" />
-      <div class="hero"> {/* Adjust padding to prevent content from being hidden behind the header */}
+      <div className="hero"> {/* Adjust padding to prevent content from being hidden behind the header */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home members={members} />} />
           <Route path="/new-member" element={<NewMember addMember={addMember} />} />
           <Route path="/member-list" element={<MemberList members={members} />} />
         </Routes>

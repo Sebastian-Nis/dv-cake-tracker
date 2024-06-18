@@ -36,7 +36,9 @@
   cursor: pointer;
   border-radius: 45px;
   display: flex;
-  align-items: center;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  text-align: center; /* Ensure text is centered */
 }
 
 .filter-buttons button:hover {
@@ -45,6 +47,9 @@
 
 .filter-buttons i {
   margin-left: 5px;
+  margin-top: 2px; /* Adjust this value to center the icon horizontally */
+  display: flex; /* Ensure icons are flex items */
+  align-items: center; /* Center icon vertically */
 }
 
 .member-list {
