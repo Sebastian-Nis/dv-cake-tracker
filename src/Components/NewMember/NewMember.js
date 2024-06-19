@@ -9,6 +9,7 @@ const NewMember = ({ addMember }) => {
   const [birthDate, setBirthDate] = useState('');
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
 
   const handlePlaceSelect = ({ city, country }) => {
@@ -18,10 +19,31 @@ const NewMember = ({ addMember }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validation to check if any field is empty
+    if (!firstName || !lastName || !birthDate || !country || !city) {
+      alert('No field can be left empty. Please fill out all fields.');
+      return;
+    }
+
     const newMember = { firstName, lastName, birthDate, country, city };
     console.log('Form submitted with:', newMember); // Debugging log
     addMember(newMember);
-    // navigate('/member-list'); // Remove this line to prevent automatic navigation
+    
+    // Clear the form fields
+    setFirstName('');
+    setLastName('');
+    setBirthDate('');
+    setCountry('');
+    setCity('');
+
+    // Show success message
+    setSuccessMessage('Member added successfully!');
+    
+    // Remove success message after a few seconds
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, 3000);
   };
 
   return (
@@ -67,6 +89,7 @@ const NewMember = ({ addMember }) => {
       <div className='button-container'>
         <button type="submit">Add Member</button>
       </div>
+      {successMessage && <p className='success-message'>{successMessage}</p>}
     </form>
   );
 };
